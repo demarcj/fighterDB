@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/dist";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -73,13 +73,59 @@
 "use strict";
 
 
-function test() {
+function createNav() {
   "use strict";
 
-  var text = document.getElementById("header");
-  text.innerHTML = "Something";
-};
-window.addEventListener("load", test);
+  var getPage = document.getElementById("pageValue").value;
+  var menuList = ["Home", "Stats", "About", "Contact"];
+  var statsList = ["Players"];
+  var anchor = "./";
+  if (getPage === "0") {
+    anchor = "./src/www/";
+  }
+  var getMenu = document.getElementById("menu");
+  var navList = createNavList(menuList, statsList, anchor, getPage);
+  getMenu.innerHTML = "<ul>" + navList + "</ul>";
+}
+
+function createNavList(menuList, statsList, anchor, getPage) {
+  "use strict";
+
+  var addMenu = "";
+  var i = void 0;
+  var j = void 0;
+  for (i = 0; i < menuList.length; i += 1) {
+    var lowerMenuList = menuList[i].substring(0, 1).toLowerCase() + menuList[i].substring(1, menuList[i].length);
+    var getHomeAnchor = anchor + lowerMenuList;
+    if (menuList[i] === "Stats") {
+      addMenu += "<li>" + menuList[i] + "<ul>";
+      for (j = 0; j < statsList.length; j += 1) {
+        var lowerStatsList = statsList[j].substring(0, 1).toLowerCase() + statsList[j].substring(1, statsList[j].length);
+        var getAnchor = anchor + lowerStatsList;
+        addMenu += "<li><a href='" + getAnchor + ".html'>" + statsList[j] + "</a></li>";
+      }
+      addMenu += "</ul>";
+    } else {
+      if (getPage === "1" && menuList[i] === "Home") {
+        addMenu += "<li><a href='../../index.html'>" + menuList[i];
+      } else {
+        addMenu += "<li><a href='" + getHomeAnchor + ".html'>" + menuList[i];
+      }
+    }
+    addMenu += "</a></li>";
+  }
+  return addMenu;
+}
+window.addEventListener("load", createNav);
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var header = __webpack_require__(0);
 
 /***/ })
 /******/ ]);

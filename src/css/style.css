@@ -1,0 +1,36 @@
+/* line 1, C:/xampp/htdocs/Developer/fighterDB/src/css/style.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+/* line 6, C:/xampp/htdocs/Developer/fighterDB/src/css/style.scss */
+h1 {
+  text-align: center; }
+
+/* line 9, C:/xampp/htdocs/Developer/fighterDB/src/css/style.scss */
+.main {
+  width: 66%;
+  margin: auto; }
+
+/* line 13, C:/xampp/htdocs/Developer/fighterDB/src/css/style.scss */
+nav > ul {
+  list-style: none;
+  padding: 15px 0;
+  margin-left: auto; }
+
+/* line 18, C:/xampp/htdocs/Developer/fighterDB/src/css/style.scss */
+nav > ul > li {
+  display: inline-block;
+  padding-right: 10px; }
+
+/* line 22, C:/xampp/htdocs/Developer/fighterDB/src/css/style.scss */
+nav > ul > li ul {
+  display: none;
+  position: absolute; }
+
+/* line 26, C:/xampp/htdocs/Developer/fighterDB/src/css/style.scss */
+nav > ul > li:hover ul {
+  display: block; }
+
+/*# sourceMappingURL=style.css.map */

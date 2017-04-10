@@ -1,8 +1,10 @@
 var webpack = require("webpack");
 var path = require("path");
 var config = {
-//  entry: path.resolve(__dirname, "src", "javascript") + "/script.js",
-  entry: path.resolve(__dirname, "src", "javascript") + "/script.js",
+  context: path.resolve(__dirname, "src", "javascript"),
+  entry: {
+    script:  "./script.js"
+  },
   output: {
     path: path.resolve(__dirname, "src", "dist"),
     filename: "bundle.js",
@@ -16,7 +18,7 @@ var config = {
         use: {
           loader: "babel-loader",
           options: {
-          presets: ["react", "es2015", "stage-2", "env", 'react-hmre']
+          presets: ["react", "es2015", "stage-2", "env"]
           }
         }
       }

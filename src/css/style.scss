@@ -1,0 +1,28 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1{
+  text-align: center;
+}
+.main{
+  width: 66%;
+  margin: auto;
+}
+nav > ul{
+  list-style: none;
+  padding: 15px 0;
+  margin-left: auto;
+}
+nav >ul > li{
+  display: inline-block;
+  padding-right: 10px;
+}
+nav > ul > li ul {
+  display: none;
+  position: absolute;
+}
+nav > ul > li:hover ul{
+  display: block;
+}
